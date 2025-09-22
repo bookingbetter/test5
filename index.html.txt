@@ -9,44 +9,50 @@
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
-    /* Reset & βασικά styles */
-    * { margin:0; padding:0; box-sizing:border-box; font-family: 'Montserrat', sans-serif;}
-    body {line-height:1.6; color:#333; scroll-behavior:smooth;}
+    /* Βασικά */
+    * {margin:0; padding:0; box-sizing:border-box; font-family:'Montserrat', sans-serif;}
+    body {line-height:1.6; color:#333; scroll-behavior:smooth; background:#f8f9fa;}
     a {text-decoration:none; color:inherit;}
     img {max-width:100%; display:block;}
 
     /* Header */
-    header {display:flex; justify-content:space-between; align-items:center; padding:20px 10%; background:#0D6EFD; color:white; position:sticky; top:0; z-index:1000; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
-    header .logo {font-size:1.8rem; font-weight:700;}
+    header {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:20px 10%; background:#0D6EFD; color:white; position:sticky; top:0; z-index:1000;
+      box-shadow:0 4px 6px rgba(0,0,0,0.1);
+    }
+    .logo {font-size:1.8rem; font-weight:700;}
     nav a {margin-left:25px; font-weight:600; transition:0.3s;}
     nav a:hover {color:#FFC107;}
 
-    /* Hero Section */
-    .hero {height:90vh; background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://source.unsplash.com/1600x900/?hotel,luxury') center/cover no-repeat; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; color:white;}
+    /* Hero */
+    .hero {
+      height:90vh; display:flex; flex-direction:column; justify-content:center; align-items:center;
+      text-align:center; color:white;
+      background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://source.unsplash.com/1600x900/?hotel,luxury') center/cover no-repeat;
+    }
     .hero h1 {font-size:3rem; margin-bottom:20px;}
     .hero p {font-size:1.5rem; margin-bottom:30px;}
-    .hero a {padding:15px 30px; background:#FFC107; color:#333; font-weight:700; border-radius:5px; transition:0.3s;}
+    .hero a {
+      padding:15px 30px; background:#FFC107; color:#333; font-weight:700; border-radius:5px;
+      transition:0.3s;
+    }
     .hero a:hover {background:#FFD633; transform:translateY(-3px);}
 
     /* Sections */
     section {padding:80px 10%;}
-    h2 {margin-bottom:40px; color:#0D6EFD; text-align:center;}
+    h2 {margin-bottom:50px; color:#0D6EFD; text-align:center;}
 
-    /* Services */
-    .services {display:flex; flex-wrap:wrap; justify-content:space-between; gap:30px;}
-    .service {flex:1 1 300px; padding:30px; border-radius:10px; background:#f5f5f5; text-align:center; transition:0.3s; opacity:0; transform:translateY(50px);}
-    .service:hover {transform:translateY(-10px); box-shadow:0 10px 20px rgba(0,0,0,0.1);}
-    .service i {font-size:2.5rem; color:#0D6EFD; margin-bottom:15px;}
-    .service h3 {margin-bottom:15px; color:#0D6EFD;}
-    .service p {color:#555;}
-
-    /* Why Us */
-    .points {display:flex; flex-wrap:wrap; justify-content:space-between; gap:30px;}
-    .point {flex:1 1 250px; background:white; padding:30px; border-radius:10px; transition:0.3s; text-align:center; opacity:0; transform:translateY(50px);}
-    .point:hover {transform:translateY(-10px); box-shadow:0 10px 20px rgba(0,0,0,0.1);}
-    .point i {font-size:2.5rem; color:#FFC107; margin-bottom:15px;}
-    .point h3 {margin-bottom:10px;}
-    .point p {color:#555;}
+    /* Cards */
+    .cards {display:flex; flex-wrap:wrap; gap:30px; justify-content:center;}
+    .card {
+      flex:1 1 300px; background:white; padding:30px; border-radius:15px;
+      text-align:center; transition:0.3s; opacity:0; transform:translateY(50px);
+    }
+    .card:hover {transform:translateY(-10px); box-shadow:0 12px 24px rgba(0,0,0,0.15);}
+    .card i {font-size:2.5rem; color:#0D6EFD; margin-bottom:15px;}
+    .card h3 {margin-bottom:15px;}
+    .card p {color:#555;}
 
     /* Contact Form */
     .contact form {max-width:600px; margin:0 auto; display:flex; flex-direction:column; gap:20px;}
@@ -64,7 +70,7 @@
     @media(max-width:768px) {
       header {flex-direction:column;}
       nav a {margin:10px;}
-      .services, .points {flex-direction:column; align-items:center;}
+      .cards {flex-direction:column; align-items:center;}
     }
   </style>
 </head>
@@ -81,16 +87,72 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero" id="hero">
     <h1>Η πρώτη εντύπωση φέρνει την κράτηση</h1>
     <p>Βελτιστοποιούμε την παρουσία σας στο Booking και σε άλλες πλατφόρμες</p>
     <a href="#services">Δες τις υπηρεσίες μας</a>
   </section>
 
-  <!-- Services -->
+  <!-- Υπηρεσίες -->
   <section id="services">
     <h2>Οι Υπηρεσίες μας</h2>
-    <div class="services">
-      <div class="service">
-        <i class="fas fa
+    <div class="cards">
+      <div class="card"><i class="fas fa-camera-retro"></i><h3>Φωτογράφιση</h3><p>Υψηλής ποιότητας φωτογραφίες που αναδεικνύουν τον χώρο σας.</p></div>
+      <div class="card"><i class="fas fa-file-alt"></i><h3>Περιγραφές</h3><p>Σαφείς και πιασάρικες περιγραφές που αυξάνουν το ενδιαφέρον των επισκεπτών.</p></div>
+      <div class="card"><i class="fas fa-list-alt"></i><h3>Διαχείριση καταχώρησης</h3><p>Ακριβής και ελκυστική παρουσίαση στα Booking, Airbnb και άλλες πλατφόρμες.</p></div>
+    </div>
+  </section>
+
+  <!-- Γιατί εμάς -->
+  <section id="why">
+    <h2>Γιατί να μας επιλέξετε</h2>
+    <div class="cards">
+      <div class="card"><i class="fas fa-user-tie"></i><h3>Επαγγελματισμός</h3><p>Υψηλής ποιότητας υπηρεσίες και αξιοπιστία.</p></div>
+      <div class="card"><i class="fas fa-lightbulb"></i><h3>Εμπειρία</h3><p>Γνωρίζουμε τι χρειάζεται για να ξεχωρίσει η καταχώρησή σας.</p></div>
+      <div class="card"><i class="fas fa-chart-line"></i><h3>Αποτελέσματα</h3><p>Αυξάνουμε την ορατότητα και τις κρατήσεις σας.</p></div>
+    </div>
+  </section>
+
+  <!-- Επικοινωνία -->
+  <section id="contact">
+    <h2>Επικοινωνήστε μαζί μας</h2>
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Όνομα" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="message" placeholder="Μήνυμα" rows="5" required></textarea>
+      <button type="submit">Αποστολή</button>
+    </form>
+    <p id="formMessage" style="margin-top:15px; color:green;"></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 BookingBetter. Όλα τα δικαιώματα διατηρούνται.</p>
+    <p>
+      <a href="#">Facebook</a>|
+      <a href="#">Instagram</a>|
+      <a href="#">LinkedIn</a>
+    </p>
+  </footer>
+
+  <script>
+    // Smooth fade-in animation
+    const cards = document.querySelectorAll('.card');
+    const options = {threshold:0.1};
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if(entry.isIntersecting){ entry.target.style.opacity=1; entry.target.style.transform='translateY(0)'; } });
+    }, options);
+    cards.forEach(card => observer.observe(card));
+
+    // Φόρμα επικοινωνίας
+    const form = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      formMessage.textContent = 'Το μήνυμά σας στάλθηκε επιτυχώς! Ευχαριστούμε.';
+      form.reset();
+    });
+  </script>
+</body>
+</html>
